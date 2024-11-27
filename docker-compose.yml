@@ -1,0 +1,84 @@
+# Services
+services:
+
+  # Frontend
+  frontend_app:
+    build: ./gym-app-frontend/.
+    container_name: frontend
+    restart: always
+    ports:
+      - "80:5173"
+    networks:
+      - my-network
+
+  # Backend
+  backend_app:
+    build: ./gym-app-backend/.
+    container_name: backend_app
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=jdbc:postgresql://postgresql_db:5432/gym_app
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=postgres
+      - BROKER_URL=tcp://mqtt:1883
+    depends_on:
+      - postgresql_db
+    networks:
+      - my-network
+
+  # Mosquitto
+  mqtt:
+    image: eclipse-mosquitto:2.0.18
+    container_name: mqtt
+    restart: always
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mqtt/config:/mosquitto/config
+    networks:
+      - my-network
+
+  # PostgreSQL
+  postgresql_db:
+    image: postgres:15.2
+    container_name: postgresql_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - my-network
+
+  # Adminer
+  adminer_panel:
+    image: adminer:4.8.1
+    container_name: adminer_panel
+    restart: always
+    ports:
+      - 9090:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: postgresql_db
+      ADMINER_DESIGN: pepa-linha
+    depends_on:
+      - postgresql_db
+    networks:
+      - my-network
+
+
+# Volumes
+volumes:
+  postgres_data:
+  mqtt:
+
+# Networks
+networks:
+  my-network:
+    driver: bridge

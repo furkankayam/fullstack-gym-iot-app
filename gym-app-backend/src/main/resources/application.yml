@@ -1,0 +1,50 @@
+server:
+  port: 8080
+
+spring:
+  banner:
+    location: Banner.txt
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/gym_app}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        show_sql: true
+        type:
+          wrapper_array_handling: ALLOW
+    database: postgresql
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: gym.app36@gmail.com
+    password: zcsnrtlmibgkmlpq
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+# MQTT
+mqtt:
+  broker-url: ${BROKER_URL:tcp://localhost:1883}
+
+jwt:
+  key: DnCcSATjkHmrQNF70kq7Zpisvkii0/9Y0dHgbrasHDomrXIEXAacwgIB3l1Ixi9108P0Go+i2YJplxB7fwJQaRbbTvqCTSOGXy6i4FJAoqclA/ClDUMD6OIwTHBNXBMzp8ernr7/CMpqAs8IGBEFEybcxue/W09Rd641KjpCl/8=
+
+  expirationAccessToken: 604800000
+  expirationRefreshToken: 604800000
+
+# Project Description
+application:
+  title: 'gym app'
+  version: 'v1.0'
+
