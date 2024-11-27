@@ -148,7 +148,7 @@ This project is a web-based Gym Management System that allows both administrator
 
 <br>
 
-### Used Technologies in The Project:
+#### Used Technologies in The Project:
 
 [![React](https://img.shields.io/badge/React-18.3-000?style=for-the-badge&logo=react&logoColor=white&color=61DAFB)](https://react.dev/)
 [![Axios](https://img.shields.io/badge/Axios-1.7-000?style=for-the-badge&logo=axios&logoColor=white&color=5A29E4)](https://axios-http.com/docs/intro)
@@ -169,8 +169,6 @@ This project is a web-based Gym Management System that allows both administrator
 ```bash
 git clone https://github.com/furkankayam/fullstack-gym-iot-app.git
 ```
-
-<br>
 
 ### Settings
 
@@ -196,15 +194,11 @@ const char* password = "<WIFI_PASSWORD>";
 const char* serverUrl = "<SERVER_ENDPOINT>";
 ```
 
-<br>
-
 ### Usage
 
 ```bash
 docker-compose up
 ```
-
-<br>
 
 ### URL
 
@@ -230,10 +224,6 @@ http://localhost:9090
 - `username`: postgres
 - `password`: postgres
 - `database`: gym_app
-
-<br>
-
-<br>
 
 # License
 
