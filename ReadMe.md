@@ -48,7 +48,6 @@ This project is a web-based Gym Management System that allows both administrator
 </details>
 
 </div>
-<br>
 <hr>
 
 <div>
@@ -88,10 +87,10 @@ This project is a web-based Gym Management System that allows both administrator
 <summary>🔓 Admin - Reset Password Page </summary>
 <img src="./images/admin/admin_restart_password.png" alt="create">
 </details>
-
 </div>
-<br>
+
 <hr>
+
 <div>
 <div align="center">
 <h3>⚡User Page </h3>
@@ -106,7 +105,6 @@ This project is a web-based Gym Management System that allows both administrator
 </details>
 
 </div>
-<br>
 <hr>
 
 <div>
@@ -146,7 +144,6 @@ This project is a web-based Gym Management System that allows both administrator
 </details>
 
 </div>
-<br>
 <hr>
 
 <br>
