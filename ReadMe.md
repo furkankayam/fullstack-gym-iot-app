@@ -170,6 +170,8 @@ This project is a web-based Gym Management System that allows both administrator
 git clone https://github.com/furkankayam/fullstack-gym-iot-app.git
 ```
 
+<br>
+
 ### Settings
 
 ```js
@@ -194,11 +196,15 @@ const char* password = "<WIFI_PASSWORD>";
 const char* serverUrl = "<SERVER_ENDPOINT>";
 ```
 
+<br>
+
 ### Usage
 
 ```bash
 docker-compose up
 ```
+
+<br>
 
 ### URL
 
@@ -224,6 +230,8 @@ http://localhost:9090
 - `username`: postgres
 - `password`: postgres
 - `database`: gym_app
+
+<br>
 
 # License
 
