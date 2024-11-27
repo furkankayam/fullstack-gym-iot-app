@@ -17,7 +17,6 @@ This project is a web-based Gym Management System that allows both administrator
 - Users can view their measurements, but cannot modify them.
 - Users can reset their own password.
 
-<br>
 <hr>
 
 <div>
